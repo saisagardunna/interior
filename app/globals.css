@@ -129,3 +129,33 @@ h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3rem, 5.
   .visual-section { display: flex; flex-direction: column; } .visual-image { min-height: 420px; } .visual-copy { padding: 75px 7vw 90px; } .process-grid { grid-template-columns: 1fr; gap: 45px; } .process-item h3 { margin-top: 35px; font-size: 32px; } .contact { min-height: 580px; } .contact-meta { margin-top: 90px; flex-direction: column; gap: 12px; } .footer-top { display: flex; flex-direction: column; gap: 25px; } .back-top { align-self: flex-start; } .footer-bottom { margin-top: 55px; flex-wrap: wrap; gap: 18px; } .footer-bottom > span:last-child { width: 100%; } .mobile-sticky { position: fixed; z-index: 10; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: .7fr 1fr 1.15fr; background: var(--ivory); border-top: 1px solid var(--border); box-shadow: 0 -5px 20px rgba(0,0,0,.06); } .mobile-sticky a { padding: 15px 6px; text-align: center; border-right: 1px solid var(--border); text-transform: uppercase; letter-spacing: .1em; font-size: 9px; } .mobile-sticky a:last-child { background: var(--charcoal); color: var(--ivory); border: 0; }
 }
 @keyframes menuIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.explore-center { display: flex; justify-content: center; margin-top: 76px; }
+.contact-meta span { display: inline-flex; align-items: center; gap: 7px; }
+.contact-meta svg { width: 13px; height: 13px; }
+.simple-header { display: flex; justify-content: space-between; align-items: center; padding: 28px 6vw; border-bottom: 1px solid var(--border); }
+.simple-header .text-link { border: 0; }
+.contact-page { min-height: 100svh; background: var(--ivory); color: var(--charcoal); }
+.contact-layout { max-width: 1240px; margin: 0 auto; padding: 110px 6vw 130px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 11vw; }
+.contact-intro h1 { font-family: var(--font-serif); font-size: clamp(4rem, 7vw, 7.5rem); line-height: .88; letter-spacing: -.065em; font-weight: 400; margin: 0 0 34px; }
+.contact-intro h1 i { color: var(--bronze); font-weight: 400; }
+.contact-intro > p:not(.eyebrow) { max-width: 370px; color: #5f5b54; line-height: 1.7; font-size: 14px; }
+.contact-details { display: flex; flex-direction: column; gap: 16px; margin-top: 65px; font-size: 12px; }
+.contact-details a { display: inline-flex; align-items: center; gap: 12px; width: fit-content; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.contact-details svg, .location-box svg { width: 16px; height: 16px; color: var(--bronze); }
+.enquiry-form { display: flex; flex-direction: column; gap: 25px; padding-top: 22px; }
+.enquiry-form label { display: flex; flex-direction: column; gap: 10px; color: #5f5b54; text-transform: uppercase; letter-spacing: .14em; font-size: 9px; }
+.enquiry-form input, .enquiry-form textarea { border: 0; border-bottom: 1px solid #bcb5aa; background: transparent; padding: 11px 0; outline: 0; font: inherit; color: var(--charcoal); resize: vertical; }
+.enquiry-form input:focus, .enquiry-form textarea:focus { border-color: var(--charcoal); }
+.location-box { border: 1px solid var(--border); padding: 15px; display: flex; align-items: center; justify-content: space-between; gap: 15px; font-size: 11px; color: #5f5b54; }
+.location-box > div { display: flex; align-items: center; gap: 10px; }
+.location-box button { border: 0; background: transparent; color: var(--charcoal); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+.form-status { margin: 0; color: #65745c; font-size: 12px; line-height: 1.5; }
+.simple-footer { border-top: 1px solid var(--border); max-width: 1240px; margin: 0 auto; padding: 20px 6vw 30px; display: flex; justify-content: space-between; font-size: 10px; color: #77736c; text-transform: uppercase; letter-spacing: .12em; }
+.simple-footer div { display: flex; gap: 25px; color: var(--charcoal); }
+.legal-page { min-height: 100svh; max-width: 720px; padding: 44px 7vw; background: var(--ivory); color: var(--charcoal); }
+.legal-page .eyebrow { margin-top: 120px; }
+.legal-page h1 { font-family: var(--font-serif); font-size: clamp(4rem, 8vw, 7rem); font-weight: 400; line-height: .9; margin: 0 0 40px; }
+.legal-page p:not(.eyebrow) { color: #5f5b54; font-size: 15px; line-height: 1.8; margin-bottom: 25px; }
+.legal-page p a { text-decoration: underline; text-underline-offset: 4px; }
+.legal-page .text-link { margin-top: 45px; }
+@media (max-width: 760px) { .explore-center { margin-top: 52px; } .contact-layout { display: flex; flex-direction: column; gap: 60px; padding-top: 75px; } .contact-intro h1 { font-size: clamp(3.8rem, 17vw, 6rem); } .contact-details { margin-top: 42px; } .simple-footer { flex-direction: column; gap: 18px; } .location-box { align-items: flex-start; flex-direction: column; } .legal-page { padding: 30px 7vw 80px; } .legal-page .eyebrow { margin-top: 100px; } }

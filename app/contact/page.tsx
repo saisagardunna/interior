@@ -1,0 +1,13 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowUpRight, LocateFixed, Mail, Phone, ArrowLeft } from 'lucide-react'
+import { FormEvent, useState } from 'react'
+
+export default function ContactPage() {
+  const [status, setStatus] = useState('')
+  const [location, setLocation] = useState('Location not shared yet')
+  function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); setStatus('Thank you — your enquiry is ready to send. We will be in touch shortly.') }
+  function locate() { if (!navigator.geolocation) return setLocation('Geolocation is not supported by this browser.') ; setLocation('Requesting your location…'); navigator.geolocation.getCurrentPosition((position) => setLocation(`Latitude ${position.coords.latitude.toFixed(5)} · Longitude ${position.coords.longitude.toFixed(5)}`), () => setLocation('Location permission was declined. You can still send your enquiry.')) }
+  return <main className="contact-page"><header className="simple-header"><Link href="/" className="brand-mark"><span>SA</span><em>SAID studio</em></Link><Link href="/" className="text-link"><ArrowLeft /> Back home</Link></header><div className="contact-layout"><section className="contact-intro"><p className="eyebrow">Start a conversation</p><h1>Let&apos;s make room for <i>something good.</i></h1><p>Tell us a little about your space, your brief and where you are in the process. We will come back with the right next step.</p><div className="contact-details"><a href="mailto:saidarchitects@gmail.com"><Mail /> saidarchitects@gmail.com</a><a href="tel:+919000000000"><Phone /> +91 90000 00000</a></div></section><form className="enquiry-form" onSubmit={submit}><label>Name<input name="name" required placeholder="Your name" /></label><label>Email<input name="email" type="email" required placeholder="you@example.com" /></label><label>Project location<input name="projectLocation" required placeholder="City / area" /></label><label>Tell us about the project<textarea name="message" required rows={5} placeholder="A home, office, renovation or something else…" /></label><div className="location-box"><div><LocateFixed /><span>{location}</span></div><button type="button" onClick={locate}>Use my location</button></div><button className="button button-dark" type="submit">Send enquiry <ArrowUpRight /></button>{status && <p className="form-status" role="status">{status}</p>}</form></div><footer className="simple-footer"><span>© 2026 SAID Studio</span><div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div></footer></main>
+}
