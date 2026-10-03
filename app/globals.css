@@ -78,7 +78,7 @@ h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3rem, 5.
 .project-meta p { margin: 0; }
 .project-meta > span { font-size: 10px; color: var(--bronze); }
 .align-right { text-align: right; margin-top: 80px; }
-.services { background: var(--charcoal); color: var(--ivory); }
+.patrons { background: #eee9df; }\n.patrons-panel { margin-top: 60px; background: #292713; color: #f4f1ea; padding: 34px clamp(18px, 5vw, 80px) 40px; text-align: center; overflow: hidden; }\n.patrons-panel p { margin: 0 0 28px; text-transform: uppercase; letter-spacing: .18em; font-size: 10px; }\n.patrons-panel img { display: block; width: min(100%, 1120px); height: auto; margin: 0 auto; mix-blend-mode: normal; }\n.services { background: var(--charcoal); color: var(--ivory); }
 .services .section-note { color: #aaa49a; }
 .service-list { display: grid; grid-template-columns: 1fr 1fr; gap: 11vw; border-top: 1px solid #46443f; }
 .service-names button { width: 100%; display: grid; grid-template-columns: 45px 1fr auto; align-items: center; text-align: left; color: #77736c; background: transparent; border: 0; border-bottom: 1px solid #46443f; padding: 19px 0; font-family: var(--font-serif); font-size: clamp(1.3rem, 2vw, 2.2rem); cursor: pointer; transition: color .3s, padding .3s; }
@@ -108,7 +108,7 @@ h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3rem, 5.
 .contact-meta { display: flex; justify-content: space-between; border-top: 1px solid #47443e; padding-top: 18px; color: #a6a096; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-top: 130px; }
 .footer { background: var(--charcoal); color: var(--ivory); padding: 0 4.5vw 26px; }
 .footer-top { border-top: 1px solid #47443e; padding-top: 25px; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: start; gap: 30px; }
-.footer-top p { color: #a6a096; font-size: 12px; max-width: 220px; line-height: 1.5; margin: 0; }
+.footer-top p { color: #a6a096; font-size: 10px; max-width: 220px; line-height: 1.5; margin: 0 0 10px; text-transform: uppercase; letter-spacing: .14em; }\n.footer-address { display: flex; flex-direction: column; gap: 7px; color: #a6a096; font-size: 12px; line-height: 1.5; }\n.footer-address address { font-style: normal; color: var(--ivory); }\n.footer-address a { width: fit-content; border-bottom: 1px solid #555149; padding-bottom: 2px; }\n.footer-address a:hover { color: white; }
 .back-top { justify-self: end; font-size: 10px; text-transform: uppercase; letter-spacing: .14em; display: flex; gap: 10px; align-items: center; }
 .footer-bottom { border-top: 1px solid #47443e; margin-top: 80px; padding-top: 18px; display: flex; justify-content: space-between; color: #77736c; text-transform: uppercase; letter-spacing: .12em; font-size: 9px; }
 .footer-bottom div { display: flex; gap: 25px; color: var(--ivory); }
@@ -140,7 +140,7 @@ h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3rem, 5.
 .contact-intro h1 i { color: var(--bronze); font-weight: 400; }
 .contact-intro > p:not(.eyebrow) { max-width: 370px; color: #5f5b54; line-height: 1.7; font-size: 14px; }
 .contact-details { display: flex; flex-direction: column; gap: 16px; margin-top: 65px; font-size: 12px; }
-.contact-details a { display: inline-flex; align-items: center; gap: 12px; width: fit-content; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.contact-details a, .contact-details span { display: inline-flex; align-items: flex-start; gap: 12px; width: fit-content; border-bottom: 1px solid var(--border); padding-bottom: 8px; line-height: 1.6; }
 .contact-details svg, .location-box svg { width: 16px; height: 16px; color: var(--bronze); }
 .enquiry-form { display: flex; flex-direction: column; gap: 25px; padding-top: 22px; }
 .enquiry-form label { display: flex; flex-direction: column; gap: 10px; color: #5f5b54; text-transform: uppercase; letter-spacing: .14em; font-size: 9px; }
