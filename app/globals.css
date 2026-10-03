@@ -155,7 +155,7 @@ h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(3rem, 5.
 .archive-intro > p:last-child { max-width: 330px; color: #5f5b54; line-height: 1.7; margin-top: 36px; }
 .archive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 75px 25px; padding: 0 8vw 150px; }
 .archive-offset { margin-top: 110px; }
-.archive-image { position: relative; aspect-ratio: .82; overflow: hidden; background: var(--stone); }
+.archive-image { display: block; position: relative; width: 100%; aspect-ratio: .82; overflow: hidden; background: var(--stone); }
 .archive-image img { object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
 .archive-card:hover .archive-image img { transform: scale(1.06); }
 .archive-image > span { position: absolute; top: 17px; left: 18px; color: white; font-size: 10px; letter-spacing: .15em; }
