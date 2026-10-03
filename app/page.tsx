@@ -30,12 +30,12 @@ export default function Page() {
   const closeMenu = () => setMenuOpen(false)
   return <main className="site-shell">
     <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-      <Link href="/#top" className="brand-mark" aria-label="SAID home"><span>SA</span><em>SAID studio</em></Link>
+      <Link href="/#top" className="brand-mark" aria-label="SAID home"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hF6nxSDYqKL9yPKHjxBYzPnCEcrMbw.png" alt="Satwika Architecture and Interior Design" /><span>SA</span><em>SAID studio</em></Link>
       <nav className="desktop-nav" aria-label="Primary navigation"><Link href="/projects">Projects</Link><Link href="/#services">Services</Link><Link href="/#process">Process</Link><Link href="/#studio">Studio</Link></nav>
       <Link className="header-cta" href="/contact">Start a project <ArrowUpRight aria-hidden="true" /></Link>
       <button className="menu-button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
     </header>
-    {menuOpen && <div className="mobile-menu"><div className="mobile-menu-links">{[['Work','/#work'],['Services','/#services'],['Process','/#process'],['Studio','/#studio']].map(([label, href], i) => <Link key={label} href={href} onClick={closeMenu}>{label}<span>0{i + 1}</span></Link>)}</div><Link href="/contact" className="button button-dark" onClick={closeMenu}>Start a project <ArrowUpRight /></Link></div>}
+    {menuOpen && <div className="mobile-menu"><div className="mobile-menu-links">{[['Work','/#work'],['Projects','/projects'],['Services','/#services'],['Process','/#process'],['Studio','/#studio']].map(([label, href], i) => <Link key={label} href={href} onClick={closeMenu}>{label}<span>0{i + 1}</span></Link>)}</div><Link href="/contact" className="button button-dark" onClick={closeMenu}>Start a project <ArrowUpRight /></Link></div>}
 
     <section className="hero" id="top"><Image src="/images/hero-interior.png" alt="Warm contemporary living room by SAID" fill priority className="hero-image" sizes="100vw" /><div className="hero-overlay" /><div className="hero-atmosphere" aria-hidden="true"><span className="cloud cloud-one" /><span className="cloud cloud-two" /><span className="cloud cloud-three" /></div><div className="hero-content"><p className="eyebrow light">SAID · Architects & Interior Designers</p><h1>Spaces<br /><i>designed</i><br />to belong.</h1><div className="hero-bottom"><p>Architecture, interiors and execution brought together to create refined spaces built around the way you live and work.</p><Link className="button button-light" href="#work">Explore our work <ArrowDown /></Link></div></div><div className="scroll-cue"><span>Scroll to explore</span><ArrowDown /></div></section>
 
