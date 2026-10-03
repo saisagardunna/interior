@@ -2,10 +2,35 @@
 
 import Link from 'next/link'
 import { ArrowUpRight, LocateFixed, Mail, Phone, ArrowLeft, MapPin } from 'lucide-react'
-import { FormEvent, useState } from 'react'
+import { FormEvent, Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 export default function ContactPage() {
+  return (
+    <Suspense fallback={<ContactPageFallback />}>
+      <ContactPageContent />
+    </Suspense>
+  )
+}
+
+function ContactPageFallback() {
+  return (
+    <main className="contact-page">
+      <header className="simple-header">
+        <Link href="/" className="brand-mark"><span>SA</span></Link>
+        <Link href="/" className="text-link"><ArrowLeft /> Back home</Link>
+      </header>
+      <div className="contact-layout">
+        <section className="contact-intro">
+          <p className="eyebrow">Start a conversation</p>
+          <h1>Let&apos;s make room for <i>something good.</i></h1>
+        </section>
+      </div>
+    </main>
+  )
+}
+
+function ContactPageContent() {
   const searchParams = useSearchParams()
   const project = searchParams.get('project')
   const [status, setStatus] = useState('')
