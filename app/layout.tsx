@@ -1,10 +1,24 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Cormorant_Garamond, Manrope } from 'next/font/google'
 import './globals.css'
 
+const displayFont = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+})
+
+const bodyFont = Manrope({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['400', '500', '600', '700'],
+})
+
 export const metadata: Metadata = {
-  title: 'Atelier North — Interior Architecture & Execution',
-  description: 'Atelier North creates considered interiors, architecture and crafted spaces across Hyderabad and Bengaluru.',
+  title: 'SAID — Architects & Interior Designers | Hyderabad',
+  description: 'SAID transforms residential and commercial spaces with thoughtful architecture, interior design and execution in Hyderabad.',
   generator: 'v0.app',
   keywords: ['interior design', 'interior architecture', 'fit-out', 'Hyderabad', 'Bengaluru'],
   openGraph: {
@@ -46,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${displayFont.variable} ${bodyFont.variable} antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

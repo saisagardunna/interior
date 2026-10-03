@@ -6,7 +6,7 @@
   --color-background: var(--background); --color-foreground: var(--foreground); --color-primary: var(--primary); --color-border: var(--border); --font-sans: var(--font-sans); --font-serif: var(--font-serif);
 }
 
-:root { --background: #f4f1ea; --foreground: #171717; --primary: #171717; --border: #d8d2c7; --stone: #c9c0b2; --bronze: #9a8060; --ivory: #f4f1ea; --charcoal: #171717; --font-sans: Arial, Helvetica, sans-serif; --font-serif: Georgia, 'Times New Roman', serif; }
+:root { --background: #f4f1ea; --foreground: #171717; --primary: #171717; --border: #d8d2c7; --stone: #c9c0b2; --bronze: #9a8060; --ivory: #f4f1ea; --charcoal: #171717; --font-sans: var(--font-manrope), Arial, Helvetica, sans-serif; --font-serif: var(--font-cormorant), Georgia, serif; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
@@ -26,7 +26,15 @@ a { color: inherit; text-decoration: none; }
 .mobile-menu { display: none; }
 .hero { position: relative; height: 100svh; min-height: 650px; color: white; isolation: isolate; }
 .hero-image { object-fit: cover; object-position: center; animation: heroZoom 1.8s cubic-bezier(.2,.7,.2,1) both; }
-.hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(0,0,0,.54), rgba(0,0,0,.04) 75%), linear-gradient(0deg, rgba(0,0,0,.42), transparent 45%); }
+.hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.06) 75%), linear-gradient(0deg, rgba(0,0,0,.48), transparent 45%); }
+.hero-atmosphere { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; mix-blend-mode: screen; opacity: .28; }
+.cloud { position: absolute; display: block; width: 34vw; height: 7vw; border-radius: 999px; filter: blur(18px); background: rgba(255,255,255,.34); animation: cloudDrift 28s linear infinite; }
+.cloud::before, .cloud::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+.cloud::before { width: 13vw; height: 13vw; left: 10%; bottom: 0; }
+.cloud::after { width: 9vw; height: 9vw; left: 42%; bottom: 0; }
+.cloud-one { top: 16%; left: -12%; }
+.cloud-two { top: 34%; left: 54%; transform: scale(.7); animation-delay: -11s; opacity: .7; }
+.cloud-three { top: 63%; left: 22%; transform: scale(.5); animation-delay: -21s; opacity: .55; }
 .hero-content { position: absolute; z-index: 2; left: 8.7vw; top: 50%; width: min(620px, 82vw); transform: translateY(-42%); }
 .eyebrow { color: var(--bronze); font-size: 10px; text-transform: uppercase; letter-spacing: .2em; margin: 0 0 25px; }
 .eyebrow.light { color: #dfd6c9; }
