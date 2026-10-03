@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowDown, ArrowUpRight, Menu, X, MapPin, Camera, Play, Phone, Mail } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Menu, X, Camera, Play } from 'lucide-react'
 
 const projects = [
   { title: 'The Courtyard Residence', meta: 'Hyderabad · Residential', image: '/images/courtyard-residence.png' },
@@ -51,7 +51,6 @@ export default function Page() {
 
     <section className="process section-pad" id="process"><Reveal className="section-intro"><div><p className="eyebrow">A quieter way to build</p><h2>Good spaces come<br />from <i>good questions.</i></h2></div></Reveal><div className="process-grid">{[['01','Discover','A conversation to understand your brief, rhythms and ambitions.'],['02','Shape','Plans, material stories and visuals that make the direction tangible.'],['03','Build','One calm, capable team from first line to final detail.']].map(([no, title, copy]) => <Reveal key={no} className="process-item"><span>{no}</span><h3>{title}</h3><p>{copy}</p></Reveal>)}</div></section>
 
-    <section className="contact section-pad" id="contact"><Reveal><p className="eyebrow light">Your next chapter</p><h2>Let&apos;s make room<br />for <i>something good.</i></h2><Link className="button button-light" href="/contact">Begin a conversation <ArrowUpRight /></Link></Reveal><div className="contact-meta"><div className="contact-meta-group"><a href="mailto:Say@said.archi"><Mail /> Say@said.archi</a><a href="tel:+919908001558"><Phone /> 99080 01558</a></div><span><MapPin /> Hyderabad · Telangana</span></div></section>
     <footer className="footer"><div className="footer-card"><div className="footer-card-brand"><Link href="/#top" className="brand-mark footer-brand" aria-label="SAID home"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hF6nxSDYqKL9yPKHjxBYzPnCEcrMbw.png" alt="Satwika Architecture and Interior Design" /></Link><p>Architecture, interiors and execution<br />for spaces that feel like yours.</p></div><div className="footer-address"><p>Head office</p><address>Block 21, F-1, Vignanpuri Colony<br />Vidya Nagar, Hyderabad - 44</address><a href="mailto:Say@said.archi">Say@said.archi</a><a href="tel:+919908001558">99080 01558</a></div><div className="footer-card-links"><Link href="/contact" className="button button-light">Start a conversation <ArrowUpRight /></Link><Link href="/#top" className="back-top">Back to top <ArrowUpRight /></Link></div><div className="footer-card-bottom"><span>© 2026 SAID Studio</span><div><a href="https://instagram.com/saidsays_" target="_blank" rel="noreferrer" aria-label="SAID on Instagram"><Camera /> Instagram</a><a href="https://youtube.com/@ArchitectsandInteriorDesigners" target="_blank" rel="noreferrer" aria-label="SAID on YouTube"><Play /> YouTube</a><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div></div></div></footer>
     <div className="mobile-sticky"><a href="mailto:saidarchitects@gmail.com">Email</a><a href="https://instagram.com/saidsays_" target="_blank" rel="noreferrer">Instagram</a><Link href="/contact">Get a quote</Link></div>
   </main>
