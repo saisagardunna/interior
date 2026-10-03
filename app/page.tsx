@@ -21,7 +21,15 @@ export default function Page() {
   const [activeService, setActiveService] = useState(0)
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50)
+      const hero = document.querySelector('.hero')
+      if (hero) {
+        const progress = Math.min(Math.max(window.scrollY / Math.max(hero.clientHeight, 1), 0), 1)
+        hero.style.setProperty('--scroll-progress', progress.toFixed(3))
+      }
+    }
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add('is-visible')), { threshold: 0.12 })
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
@@ -37,7 +45,7 @@ export default function Page() {
     </header>
     {menuOpen && <div className="mobile-menu"><div className="mobile-menu-links">{[['Work','/#work'],['Projects','/projects'],['Services','/#services'],['Process','/#process'],['Studio','/#studio']].map(([label, href], i) => <Link key={label} href={href} onClick={closeMenu}>{label}<span>0{i + 1}</span></Link>)}</div><Link href="/contact" className="button button-dark" onClick={closeMenu}>Start a project <ArrowUpRight /></Link></div>}
 
-    <section className="hero" id="top"><Image src="/images/hero-interior.png" alt="Warm contemporary living room by SAID" fill priority className="hero-image" sizes="100vw" /><div className="hero-overlay" /><div className="hero-atmosphere" aria-hidden="true"><span className="cloud cloud-one" /><span className="cloud cloud-two" /><span className="cloud cloud-three" /></div><div className="hero-content"><p className="eyebrow light">SAID · Architects & Interior Designers</p><h1>Spaces<br /><i>designed</i><br />to belong.</h1><div className="hero-bottom"><p>Architecture, interiors and execution brought together to create refined spaces built around the way you live and work.</p><Link className="button button-light" href="#work">Explore our work <ArrowDown /></Link></div></div><div className="scroll-cue"><span>Scroll to explore</span><ArrowDown /></div></section>
+    <section className="hero" id="top"><div className="hero-media"><Image src="/images/hero-interior.png" alt="Warm contemporary living room by SAID" fill priority className="hero-image" sizes="100vw" /><div className="hero-film" aria-hidden="true" /></div><div className="hero-overlay" /><div className="hero-atmosphere" aria-hidden="true"><span className="cloud cloud-one" /><span className="cloud cloud-two" /><span className="cloud cloud-three" /></div><div className="hero-content"><p className="eyebrow light">SAID · Architects & Interior Designers</p><h1>Spaces<br /><i>designed</i><br />to belong.</h1><div className="hero-bottom"><p>Architecture, interiors and execution brought together to create refined spaces built around the way you live and work.</p><Link className="button button-light" href="#work">Explore our work <ArrowDown /></Link></div></div><div className="scroll-cue"><span>Scroll to explore</span><ArrowDown /></div></section>
 
     <section className="intro section-pad" id="studio"><Reveal><p className="eyebrow">The studio</p></Reveal><div className="intro-grid"><Reveal><h2>We make space for<br /><i>better living.</i></h2></Reveal><Reveal className="intro-copy"><p>SAID — Satwika Architects and Interior Designers — is a design and build studio creating deeply personal homes, workspaces and experiences across India.</p><Link className="text-link" href="#process">Discover our approach <ArrowUpRight /></Link></Reveal></div></section>
 
