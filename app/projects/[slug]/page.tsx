@@ -17,7 +17,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const { slug } = await params
   const project = projects[slug as keyof typeof projects] ?? projects['the-courtyard-residence']
   return <main className="project-detail-page">
-    <header className="simple-header"><Link href="/" className="brand-mark" aria-label="SAID home"><span>SA</span><em>SAID studio</em></Link><Link href="/projects" className="text-link"><ArrowLeft /> All projects</Link></header>
+    <header className="simple-header"><Link href="/" className="brand-mark" aria-label="SAID home"><span>SA</span></Link><Link href="/projects" className="text-link"><ArrowLeft /> All projects</Link></header>
     <section className="project-detail-hero"><div className="project-detail-copy"><p className="eyebrow">{project.number} / Project archive</p><h1>{project.title}</h1><p className="project-detail-intro">{project.intro}</p><p className="project-detail-meta">{project.meta}</p></div><div className="project-detail-image"><Image src={project.image} alt={project.title} fill priority sizes="(max-width: 760px) 100vw, 62vw" /></div></section>
     <section className="project-detail-story"><p className="eyebrow">The approach</p><div><h2>Designed with<br /><i>quiet intention.</i></h2><p>{project.details}</p><Link href={`/contact?project=${encodeURIComponent(project.title)}`} className="button button-dark">Discuss this project <ArrowUpRight /></Link></div></section>
   </main>
